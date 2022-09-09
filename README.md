@@ -12,7 +12,7 @@
 
 # Меню
 
-![image](https://i.imgur.com/f6ePNIJ.png)
+![image](https://user-images.githubusercontent.com/64781822/189353314-fa2f920e-8205-4dad-8f3b-d249c758024a.png)
 
 ___
 # 💰Поддержать проект:
