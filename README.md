@@ -9,10 +9,11 @@
 
 # Запуск
 * Вводим в Terminal: **python "HZF-CLOCK.pyw"**
+* Запускаем **HZF-CLOCK.exe**
 
 # Меню
 
-![image](https://i.imgur.com/WhcH2Xe.png)
+![image](https://i.imgur.com/qHFeLMe.png)
 
 ___
 # 💰Поддержать проект:
