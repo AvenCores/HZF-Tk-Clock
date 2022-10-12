@@ -8,8 +8,7 @@
 * Запускаем установку доп. компонентов: **python Install.py**
 
 # Запуск
-* Вводим в Terminal: **python "HZF-CLOCK.pyw"**
-* Запускаем **HZF-CLOCK.exe**
+* Вводим в Terminal: **python "HZF-CLOCK.pyw"** / **HZF-CLOCK.exe**
 
 # Меню
 
