@@ -1,4 +1,4 @@
-from tkinter import Tk,Label,CENTER
+from tkinter import Tk,Label,CENTER,Button
 from time import strftime
 from datetime import date
 
@@ -20,5 +20,17 @@ godate = date.today()
 current_date = godate.strftime("%Y.%m.%d")
 datenow2=Label(text=current_date, font="ubuntu", justify=CENTER)
 datenow2.place(x=90, y=120)
+
+def godapptk():
+    root.attributes("-topmost",True)
+
+def notgodapptk():
+    root.attributes("-topmost",False)
+
+file = Button(text='Закрепить часы', command=godapptk)
+file.place(x=80, y=180)
+
+file = Button(text='Открепить часы', command=notgodapptk)
+file.place(x=80, y=210)
 
 root.mainloop()
