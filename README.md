@@ -13,7 +13,7 @@
 
 # Меню
 
-![image](https://i.imgur.com/askOs5r.png)
+![image](https://i.imgur.com/gop5fIh.png)
 
 ___
 # 💰Поддержать проект:
