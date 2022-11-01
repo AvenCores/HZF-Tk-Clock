@@ -5,7 +5,8 @@
 * Распаковываем в удобную нам директорию
 * Запускаем Terminal
 * Переходим в корень с программой
-* Запускаем установку доп. компонентов: **python Install.py**
+* Переходим в директорию Source
+* Запускаем установку доп. компонентов: **python auto-install-requirements.py**
 
 # Запуск
 * Вводим в Terminal: **python "HZF-CLOCK.pyw"** / **HZF-CLOCK.exe**
