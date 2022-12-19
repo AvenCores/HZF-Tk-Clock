@@ -9,11 +9,11 @@
 * Запускаем установку доп. компонентов: **python auto-install-requirements.py**
 
 # Запуск
-* Вводим в Terminal: **python "HZF-CLOCK.pyw"** / **HZF-CLOCK.exe**
+* Вводим в Terminal: **python "HZF-CLOCK.pyw"**
 
 # Меню
 
-![image](https://i.imgur.com/gop5fIh.png)
+![linux](https://i.imgur.com/Q0RYWVg.png) ![windows](https://i.imgur.com/gop5fIh.png)
 
 ___
 # 💰Поддержать проект:
