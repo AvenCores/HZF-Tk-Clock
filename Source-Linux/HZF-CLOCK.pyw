@@ -33,4 +33,8 @@ file.place(x=65, y=180)
 file = Button(text='Открепить часы', command=notgodapptk)
 file.place(x=65, y=210)
 
+poetry = 't.me/hzfnews'
+label1 = Label(text=poetry, justify=CENTER, font="Ubuntu 10")
+label1.place(x=85, y=5)
+
 root.mainloop()
