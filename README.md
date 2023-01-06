@@ -9,7 +9,7 @@
 * Запускаем установку доп. компонентов: **python auto-install-requirements.py**
 
 # Запуск
-* Вводим в Terminal: **python "HZF-CLOCK.pyw"**
+* Вводим в Terminal: **python "HZF-CLOCK.pyw"** / **HZF-CLOCK-FONT.exe** / **HZF-CLOCK-NOT-FONT.exe**
 
 # Меню
 
