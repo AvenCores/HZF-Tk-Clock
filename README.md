@@ -13,7 +13,7 @@
 
 # Меню
 
-![clock-archlinux](https://i.imgur.com/bAJHWfF.png) ![windows](https://i.imgur.com/4kyj2Uw.png)
+![clock-archlinux](https://i.imgur.com/bAJHWfF.png) ![windows](https://i.imgur.com/p5l4xmy.png)
 
 ___
 # 💰Поддержать проект:
