@@ -1,1 +1,0 @@
-pyinstaller --clean -F -i ../ICO/clock.ico ../HZF-CLOCK.pyw
