@@ -4,13 +4,13 @@ from datetime import date
 from sys import platform
 import ctypes as ct
 
-root = Tk()
-root.title("HZF Clock")
-root.configure(bg='#000000')
-root.geometry("250x250")
-root.resizable(width=False, height=False)
-
 if platform == "win32":
+    root = Tk()
+    root.title("HZF Clock")
+    root.configure(bg='#000000')
+    root.geometry("250x250")
+    root.resizable(width=False, height=False)
+
     root.iconify()
     root.update()
     DWWMA_USE_IMMERSIVE_DARK_MODE = 20
