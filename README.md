@@ -13,7 +13,7 @@
 * Вводим в Terminal: **python "HZF-CLOCK.pyw"** / **HZF-CLOCK.exe**
 
 # Меню
-![windows](https://i.imgur.com/TjTI2sh.png)
+![windows](https://i.imgur.com/JABSMI3.png)
 
 ___
 # 💰Поддержать проект:

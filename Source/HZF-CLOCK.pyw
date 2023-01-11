@@ -1,8 +1,11 @@
-from tkinter import Tk,Label,CENTER,Button
+from tkinter import Tk,Label,CENTER,Button,Menu,messagebox
 from time import strftime
 from datetime import date
 from sys import platform
 import ctypes as ct
+from webbrowser import open
+
+version = "2.7"
 
 if platform == "win32":
     root = Tk()
@@ -49,9 +52,68 @@ if platform == "win32":
     file = Button(text='Открепить часы', bg="red", fg="white", command=notgodapptk)
     file.place(x=75, y=210)
 
-    poetry = 't.me/hzfnews'
-    label1 = Label(text=poetry, justify=CENTER, bg="#000000", fg="white", font="Ubuntu 10")
-    label1.place(x=85, y=5)
+    def opentgchannel():
+        url = "https://t.me/hzfnews"
+        open(url, new=2)
+
+    def openytchannel():
+        url = "https://www.youtube.com/c/HZFYT"
+        open(url, new=2)
+
+    def opendiscord():
+        url = "https://discord.com/invite/7bneGfUS5h"
+        open(url, new=2)
+
+    def openvkgroup():
+        url = "https://vk.com/hzforum1"
+        open(url, new=2)
+
+    def devtgopen():
+        url = "https://t.me/avencores"
+        open(url, new=2)
+
+    def qiwi():
+        url = "http://qiwi.com/n/AVENCORESDONATE"
+        open(url, new=2)
+
+    def cber():
+        messagebox.showinfo(title="Сбер Донат", message="2202 2050 7215 4401")
+
+    def vtb():
+        messagebox.showinfo(title="ВТБ Донат", message="2200 2404 1001 8580")
+
+    def omyprog():
+        messagebox.showinfo(title="О программе", message=f"""HZF Tk Clock - это простые часы на базе графического интерфейса Tk.
+
+Автор утилиты: avencores
+
+Интерфейс: Tkinter
+
+Версия: {version}
+    """)
+
+    mainmenu = Menu(root) 
+    root.config(menu=mainmenu)  
+
+    mygroup = Menu(mainmenu, tearoff=0)
+    mygroup.add_command(label="Telegram Channel", command=opentgchannel)
+    mygroup.add_command(label="YouTube Channel", command=openytchannel)
+    mygroup.add_command(label="Discord Channel", command=opendiscord)
+    mygroup.add_command(label="VK Group", command=openvkgroup)
+
+    helpmenu = Menu(mainmenu, tearoff=0)
+    helpmenu.add_command(label="Написать разработчику", command=devtgopen)
+    helpmenu.add_separator()  
+    helpmenu.add_command(label="О программе", command=omyprog)
+
+    donatemenu = Menu(mainmenu, tearoff=0)
+    donatemenu.add_command(label="Qiwi Донат", command=qiwi)
+    donatemenu.add_command(label="Сбер Донат", command=cber)
+    donatemenu.add_command(label="ВТБ Донат", command=vtb)
+
+    mainmenu.add_cascade(label="Информация", menu=mygroup)
+    mainmenu.add_cascade(label="Донат", menu=donatemenu)
+    mainmenu.add_cascade(label="Справка", menu=helpmenu)
 
     root.deiconify()
     root.mainloop()
@@ -88,8 +150,67 @@ elif platform == "linux" or platform == "linux2" or platform == "unix":
     file = Button(text='Открепить часы', bg="red", fg="white", command=notgodapptk)
     file.place(x=75, y=210)
 
-    poetry = 't.me/hzfnews'
-    label1 = Label(text=poetry, justify=CENTER, font="Ubuntu 10")
-    label1.place(x=85, y=5)
+    def opentgchannel():
+        url = "https://t.me/hzfnews"
+        open(url, new=2)
+
+    def openytchannel():
+        url = "https://www.youtube.com/c/HZFYT"
+        open(url, new=2)
+
+    def opendiscord():
+        url = "https://discord.com/invite/7bneGfUS5h"
+        open(url, new=2)
+
+    def openvkgroup():
+        url = "https://vk.com/hzforum1"
+        open(url, new=2)
+
+    def devtgopen():
+        url = "https://t.me/avencores"
+        open(url, new=2)
+
+    def qiwi():
+        url = "http://qiwi.com/n/AVENCORESDONATE"
+        open(url, new=2)
+
+    def cber():
+        messagebox.showinfo(title="Сбер Донат", message="2202 2050 7215 4401")
+
+    def vtb():
+        messagebox.showinfo(title="ВТБ Донат", message="2200 2404 1001 8580")
+
+    def omyprog():
+        messagebox.showinfo(title="О программе", message=f"""HZF Tk Clock - это простые часы на базе графического интерфейса Tk.
+
+Автор утилиты: avencores
+
+Интерфейс: Tkinter
+
+Версия: {version}
+    """)
+
+    mainmenu = Menu(root) 
+    root.config(menu=mainmenu)  
+
+    mygroup = Menu(mainmenu, tearoff=0)
+    mygroup.add_command(label="Telegram Channel", command=opentgchannel)
+    mygroup.add_command(label="YouTube Channel", command=openytchannel)
+    mygroup.add_command(label="Discord Channel", command=opendiscord)
+    mygroup.add_command(label="VK Group", command=openvkgroup)
+
+    helpmenu = Menu(mainmenu, tearoff=0)
+    helpmenu.add_command(label="Написать разработчику", command=devtgopen)
+    helpmenu.add_separator()  
+    helpmenu.add_command(label="О программе", command=omyprog)
+
+    donatemenu = Menu(mainmenu, tearoff=0)
+    donatemenu.add_command(label="Qiwi Донат", command=qiwi)
+    donatemenu.add_command(label="Сбер Донат", command=cber)
+    donatemenu.add_command(label="ВТБ Донат", command=vtb)
+
+    mainmenu.add_cascade(label="Информация", menu=mygroup)
+    mainmenu.add_cascade(label="Донат", menu=donatemenu)
+    mainmenu.add_cascade(label="Справка", menu=helpmenu)
 
     root.mainloop()
