@@ -1,3 +1,4 @@
 pyinstaller
 tk
 chardet
+requests

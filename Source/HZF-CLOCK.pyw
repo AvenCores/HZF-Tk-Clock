@@ -3,16 +3,24 @@ from time import strftime
 from datetime import date
 from sys import platform
 import ctypes as ct
-from webbrowser import open
+import webbrowser
+from requests import get
+from os import system
 
-version = "2.7"
+version = "2.8"
 
 if platform == "win32":
+    f=open(r'app.ico', "wb")
+    ufr = get("https://raw.githubusercontent.com/AvenCores/HZF-Tk-Clock/main/Source/ICO/clock.ico")
+    f.write(ufr.content)
+    f.close()
+
     root = Tk()
     root.title("HZF Clock")
     root.configure(bg='#000000')
     root.geometry("250x250")
     root.resizable(width=False, height=False)
+    root.iconbitmap("app.ico")
 
     root.iconify()
     root.update()
@@ -54,27 +62,27 @@ if platform == "win32":
 
     def opentgchannel():
         url = "https://t.me/hzfnews"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def openytchannel():
         url = "https://www.youtube.com/c/HZFYT"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def opendiscord():
         url = "https://discord.com/invite/7bneGfUS5h"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def openvkgroup():
         url = "https://vk.com/hzforum1"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def devtgopen():
         url = "https://t.me/avencores"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def qiwi():
         url = "http://qiwi.com/n/AVENCORESDONATE"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def cber():
         messagebox.showinfo(title="Сбер Донат", message="2202 2050 7215 4401")
@@ -117,12 +125,19 @@ if platform == "win32":
 
     root.deiconify()
     root.mainloop()
+    system("del /Q app.ico")
 
 elif platform == "linux" or platform == "linux2" or platform == "unix":
+    f=open(r'app.ico', "wb")
+    ufr = get("https://raw.githubusercontent.com/AvenCores/HZF-Tk-Clock/main/Source/ICO/clock.ico")
+    f.write(ufr.content)
+    f.close()
+
     root = Tk()
     root.title("HZF Clock")
     root.geometry("250x250")
     root.resizable(width=False, height=False)
+    root.iconbitmap("app.ico")
 
     def timenow():
         current_time = strftime("%H : %M : %S")
@@ -152,27 +167,27 @@ elif platform == "linux" or platform == "linux2" or platform == "unix":
 
     def opentgchannel():
         url = "https://t.me/hzfnews"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def openytchannel():
         url = "https://www.youtube.com/c/HZFYT"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def opendiscord():
         url = "https://discord.com/invite/7bneGfUS5h"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def openvkgroup():
         url = "https://vk.com/hzforum1"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def devtgopen():
         url = "https://t.me/avencores"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def qiwi():
         url = "http://qiwi.com/n/AVENCORESDONATE"
-        open(url, new=2)
+        webbrowser.open(url, new=2)
 
     def cber():
         messagebox.showinfo(title="Сбер Донат", message="2202 2050 7215 4401")
