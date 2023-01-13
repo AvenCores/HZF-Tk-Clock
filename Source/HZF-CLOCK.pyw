@@ -229,3 +229,4 @@ elif platform == "linux" or platform == "linux2" or platform == "unix":
     mainmenu.add_cascade(label="Справка", menu=helpmenu)
 
     root.mainloop()
+    system("rm -r app.ico")
