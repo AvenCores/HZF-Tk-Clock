@@ -6,7 +6,7 @@ from time import strftime
 from datetime import date
 import webbrowser
 
-version = "2.9"
+version = "3.0"
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
@@ -36,10 +36,10 @@ def godapptk():
 def notgodapptk():
     root.attributes("-topmost",False)
 
-button = customtkinter.CTkButton(master=root, text="Закрепить часы", command=godapptk)
+button = customtkinter.CTkButton(master=root, fg_color="green", text="Закрепить часы", command=godapptk)
 button.place(x=125, y=160, anchor=tkinter.CENTER)
 
-button = customtkinter.CTkButton(master=root, text="Открепить часы", command=notgodapptk)
+button = customtkinter.CTkButton(master=root, fg_color="red", text="Открепить часы", command=notgodapptk)
 button.place(x=125, y=200, anchor=tkinter.CENTER)
 
 def opentgchannel():

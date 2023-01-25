@@ -7,11 +7,11 @@ import webbrowser
 from requests import get
 from os import system
 
-version = "2.8"
+version = "3.0"
 
 if platform == "win32":
     f=open(r'app.ico', "wb")
-    ufr = get("https://raw.githubusercontent.com/AvenCores/HZF-Tk-Clock/main/Source/ICO/clock.ico")
+    ufr = get("https://raw.githubusercontent.com/AvenCores/HZF-Tk-Clock/main/Source-old-linux-support/ICO/clock.ico")
     f.write(ufr.content)
     f.close()
 
@@ -128,7 +128,7 @@ if platform == "win32":
 
 elif platform == "linux" or platform == "linux2" or platform == "unix":
     f=open(r'app.ico', "wb")
-    ufr = get("https://raw.githubusercontent.com/AvenCores/HZF-Tk-Clock/main/Source/ICO/clock.ico")
+    ufr = get("https://raw.githubusercontent.com/AvenCores/HZF-Tk-Clock/main/Source-old-linux-support/ICO/clock.ico")
     f.write(ufr.content)
     f.close()
 
