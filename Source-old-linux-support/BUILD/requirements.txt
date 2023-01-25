@@ -1,0 +1,4 @@
+pyinstaller
+tk
+chardet
+requests
