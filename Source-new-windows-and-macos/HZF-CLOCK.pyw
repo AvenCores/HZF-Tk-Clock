@@ -6,13 +6,13 @@ from time import strftime
 from datetime import date
 import webbrowser
 
-version = "3.0"
+version = "3.1"
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
 
 root = customtkinter.CTk()
-root.geometry("250x250")
+root.geometry("292x250")
 root.title("HZF Clock")
 root.resizable(width=False, height=False)
 
@@ -22,13 +22,13 @@ def timenow():
     clock.after(200,timenow)
 
 clock=Label(root, justify=CENTER, bg="#242424", fg="#ffffff", font=("ubuntu",30,"bold"))
-clock.grid(row=2,column=2,pady=40,padx=30)
+clock.grid(row=2,column=2,pady=60,padx=45)
 timenow()
 
 godate = date.today()
 current_date = godate.strftime("%d.%m.%y")
 datenow2=Label(text=current_date, font="ubuntu", bg="#242424", fg="#ffffff", justify=CENTER)
-datenow2.place(x=90, y=100)
+datenow2.place(x=110, y=120)
 
 def godapptk():
     root.attributes("-topmost",True)
@@ -36,11 +36,11 @@ def godapptk():
 def notgodapptk():
     root.attributes("-topmost",False)
 
-button = customtkinter.CTkButton(master=root, fg_color="green", text="Закрепить часы", command=godapptk)
-button.place(x=125, y=160, anchor=tkinter.CENTER)
+button = customtkinter.CTkButton(master=root, fg_color="#00FF00", hover_color="#32CD32", text_color="black", text="Закрепить часы", command=godapptk)
+button.place(x=150, y=180, anchor=tkinter.CENTER)
 
-button = customtkinter.CTkButton(master=root, fg_color="red", text="Открепить часы", command=notgodapptk)
-button.place(x=125, y=200, anchor=tkinter.CENTER)
+button = customtkinter.CTkButton(master=root, fg_color="red", hover_color="#8B0000", text_color="black", text="Открепить часы", command=notgodapptk)
+button.place(x=150, y=220, anchor=tkinter.CENTER)
 
 def opentgchannel():
         url = "https://t.me/hzfnews"
@@ -82,27 +82,53 @@ def omyprog():
 Версия: {version}
     """)
 
-mainmenu = Menu(root) 
-root.config(menu=mainmenu)
+def infogui():
+        window = customtkinter.CTk()
+        window.geometry("200x200")
+        window.title("")
+        window.resizable(width=False, height=False)
+        button = customtkinter.CTkButton(master=window, text="Telegram Channel", command=opentgchannel)
+        button.place(x=30, y=25)
+        button = customtkinter.CTkButton(master=window, text="YouTube Channel", command=openytchannel)
+        button.place(x=30, y=65)
+        button = customtkinter.CTkButton(master=window, text="Discord Channel", command=opendiscord)
+        button.place(x=30, y=105)
+        button = customtkinter.CTkButton(master=window, text="VK Group", command=openvkgroup)
+        button.place(x=30, y=145)
+        window.mainloop()
+        window.quit()
 
-mygroup = Menu(mainmenu, tearoff=0)
-mygroup.add_command(label="Telegram Channel", command=opentgchannel)
-mygroup.add_command(label="YouTube Channel", command=openytchannel)
-mygroup.add_command(label="Discord Channel", command=opendiscord)
-mygroup.add_command(label="VK Group", command=openvkgroup)
+def donategui():
+        window = customtkinter.CTk()
+        window.geometry("200x160")
+        window.title("")
+        window.resizable(width=False, height=False)
+        button = customtkinter.CTkButton(master=window, text="Qiwi Донат", command=qiwi)
+        button.place(x=30, y=25)
+        button = customtkinter.CTkButton(master=window, text="Сбер Донат", command=cber)
+        button.place(x=30, y=65)
+        button = customtkinter.CTkButton(master=window, text="ВТБ Донат", command=vtb)
+        button.place(x=30, y=105)
+        window.mainloop()
 
-helpmenu = Menu(mainmenu, tearoff=0)
-helpmenu.add_command(label="Написать разработчику", command=devtgopen)
-helpmenu.add_separator()  
-helpmenu.add_command(label="О программе", command=omyprog)
+def spravka():
+        window = customtkinter.CTk()
+        window.geometry("200x120")
+        window.title("")
+        window.resizable(width=False, height=False)
+        button = customtkinter.CTkButton(master=window, text="Написать разработчику", command=devtgopen)
+        button.place(x=20, y=25)
+        button = customtkinter.CTkButton(master=window, text="О программе", command=omyprog)
+        button.place(width=159, x=20, y=65)
+        window.mainloop()
 
-donatemenu = Menu(mainmenu, tearoff=0)
-donatemenu.add_command(label="Qiwi Донат", command=qiwi)
-donatemenu.add_command(label="Сбер Донат", command=cber)
-donatemenu.add_command(label="ВТБ Донат", command=vtb)
+button = customtkinter.CTkButton(master=root, text="Информация", command=infogui)
+button.place(width=92, height=25)
 
-mainmenu.add_cascade(label="Информация", menu=mygroup)
-mainmenu.add_cascade(label="Донат", menu=donatemenu)
-mainmenu.add_cascade(label="Справка", menu=helpmenu)
+button = customtkinter.CTkButton(master=root, text="Донат", command=donategui)
+button.place(width=92, height=25, x=100)
+
+button = customtkinter.CTkButton(master=root, text="Справка", command=spravka)
+button.place(width=92, height=25, x=200)
 
 root.mainloop()
