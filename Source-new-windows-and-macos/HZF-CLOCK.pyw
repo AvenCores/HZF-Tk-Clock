@@ -6,7 +6,7 @@ from time import strftime
 from datetime import date
 import webbrowser
 
-version = "3.1"
+version = "3.2"
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
@@ -118,17 +118,17 @@ def spravka():
         window.resizable(width=False, height=False)
         button = customtkinter.CTkButton(master=window, text="Написать разработчику", command=devtgopen)
         button.place(x=20, y=25)
-        button = customtkinter.CTkButton(master=window, text="О программе", command=omyprog)
-        button.place(width=159, x=20, y=65)
+        button = customtkinter.CTkButton(master=window, width=159, text="О программе", command=omyprog)
+        button.place(x=20, y=65)
         window.mainloop()
 
-button = customtkinter.CTkButton(master=root, text="Информация", command=infogui)
-button.place(width=92, height=25)
+button = customtkinter.CTkButton(master=root, width=92, height=25, text="Информация", command=infogui)
+button.place(x=0)
 
-button = customtkinter.CTkButton(master=root, text="Донат", command=donategui)
-button.place(width=92, height=25, x=100)
+button = customtkinter.CTkButton(master=root, width=92, height=25, text="Донат", command=donategui)
+button.place(x=100)
 
-button = customtkinter.CTkButton(master=root, text="Справка", command=spravka)
-button.place(width=92, height=25, x=200)
+button = customtkinter.CTkButton(master=root, width=92, height=25, text="Справка", command=spravka)
+button.place(x=200)
 
 root.mainloop()
