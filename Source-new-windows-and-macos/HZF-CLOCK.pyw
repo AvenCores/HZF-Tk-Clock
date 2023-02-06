@@ -5,18 +5,24 @@ from tkinter import messagebox
 from time import strftime
 from datetime import date
 import webbrowser
-import darkdetect
+import darkdetect 
 
-version = "3.3"
+#######
+version = "3.4"
+autor = "avencores"
+libs = "Tkinter | CustomTkinter"
+about = "HZF Tk Clock - это простые часы на базе графического интерфейса Tk и модификации CustomTkinter."
+#######
 
-customtkinter.set_appearance_mode("system")
-customtkinter.set_default_color_theme("blue")
+customtkinter.set_appearance_mode("system") # Modes: system (default), light, dark
+customtkinter.set_default_color_theme("blue") # Themes: blue (default), dark-blue, green
 
-root = customtkinter.CTk()
-root.geometry("292x250")
-root.title("HZF Clock")
-root.resizable(width=False, height=False)
+root = customtkinter.CTk() # Создает окно
+root.geometry("292x250") # Размеры окна
+root.title("HZF Clock") # Название окна
+root.resizable(width=False, height=False) # Запрет на модификацию окна по высоте и ширине
 
+# Dark and Light
 if darkdetect.theme() == "Dark":
         def timenow():
                 current_time = strftime("%H : %M : %S")
@@ -33,31 +39,31 @@ if darkdetect.theme() == "Dark":
         datenow2.place(x=110, y=120)
 
 elif darkdetect.theme() == "Light": 
-                def timenow():
-                        current_time = strftime("%H : %M : %S")
-                        clock.config(text=current_time)
-                        clock.after(200,timenow)
+        def timenow():
+                current_time = strftime("%H : %M : %S")
+                clock.config(text=current_time)
+                clock.after(200,timenow)
 
-                clock=Label(root, justify=CENTER, bg="#EBEBEB", fg="#000000", font=("ubuntu",30,"bold"))
-                clock.grid(row=2,column=2,pady=60,padx=45)
-                timenow()
+        clock=Label(root, justify=CENTER, bg="#EBEBEB", fg="#000000", font=("ubuntu",30,"bold"))
+        clock.grid(row=2,column=2,pady=60,padx=45)
+        timenow()
 
-                godate = date.today()
-                current_date = godate.strftime("%d.%m.%y")
-                datenow2=Label(text=current_date, bg="#EBEBEB", fg="#000000",font="ubuntu", justify=CENTER)
-                datenow2.place(x=110, y=120)
+        godate = date.today()
+        current_date = godate.strftime("%d.%m.%y")
+        datenow2=Label(text=current_date, bg="#EBEBEB", fg="#000000",font="ubuntu", justify=CENTER)
+        datenow2.place(x=110, y=120)
 
 
 def godapptk():
-    root.attributes("-topmost",True)
+    root.attributes("-topmost",True) # Закрепить
 
 def notgodapptk():
-    root.attributes("-topmost",False)
+    root.attributes("-topmost",False) # Открепить
 
 button = customtkinter.CTkButton(master=root, fg_color="#00FF00", hover_color="#32CD32", text_color="black", text="Закрепить часы", command=godapptk)
 button.place(x=150, y=180, anchor=tkinter.CENTER)
 
-button = customtkinter.CTkButton(master=root, fg_color="red", hover_color="#8B0000", text_color="black", text="Открепить часы", command=notgodapptk)
+button = customtkinter.CTkButton(master=root, fg_color="red", hover_color="#8B0000", text_color="white", text="Открепить часы", command=notgodapptk)
 button.place(x=150, y=220, anchor=tkinter.CENTER)
 
 def opentgchannel():
@@ -85,17 +91,30 @@ def qiwi():
         webbrowser.open(url, new=2)
 
 def cber():
-        messagebox.showinfo(title="Сбер Донат", message="2202 2050 7215 4401")
+        windowsadd = customtkinter.CTk()
+        windowsadd.geometry("300x100")
+        windowsadd.title("Сбер Донат")
+        windowsadd.resizable(width=False, height=False)
+        label = customtkinter.CTkLabel(master=windowsadd, font=("ubuntu",20,"bold"), text="2202 2050 7215 4401")
+        label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+        windowsadd.mainloop()
+
 
 def vtb():
-        messagebox.showinfo(title="ВТБ Донат", message="2200 2404 1001 8580")
+        windowsadd = customtkinter.CTk()
+        windowsadd.geometry("300x100")
+        windowsadd.title("ВТБ Донат")
+        windowsadd.resizable(width=False, height=False)
+        label = customtkinter.CTkLabel(master=windowsadd, font=("ubuntu",20,"bold"), text="2200 2404 1001 8580")
+        label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+        windowsadd.mainloop()
 
 def omyprog():
-        messagebox.showinfo(title="О программе", message=f"""HZF Tk Clock - это простые часы на базе графического интерфейса Tk.
+        messagebox.showinfo(title="О программе", message=f"""{about}
 
-Автор утилиты: avencores
+Автор утилиты: {autor}
 
-Интерфейс: Tkinter | customtkinter
+Интерфейс: {libs}
 
 Версия: {version}
     """)
