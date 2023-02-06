@@ -5,10 +5,11 @@ from tkinter import messagebox
 from time import strftime
 from datetime import date
 import webbrowser
+import darkdetect
 
-version = "3.2"
+version = "3.3"
 
-customtkinter.set_appearance_mode("dark")
+customtkinter.set_appearance_mode("system")
 customtkinter.set_default_color_theme("blue")
 
 root = customtkinter.CTk()
@@ -16,19 +17,36 @@ root.geometry("292x250")
 root.title("HZF Clock")
 root.resizable(width=False, height=False)
 
-def timenow():
-    current_time = strftime("%H : %M : %S")
-    clock.config(text=current_time)
-    clock.after(200,timenow)
+if darkdetect.theme() == "Dark":
+        def timenow():
+                current_time = strftime("%H : %M : %S")
+                clock.config(text=current_time)
+                clock.after(200,timenow)
 
-clock=Label(root, justify=CENTER, bg="#242424", fg="#ffffff", font=("ubuntu",30,"bold"))
-clock.grid(row=2,column=2,pady=60,padx=45)
-timenow()
+        clock=Label(root, justify=CENTER, bg="#242424", fg="#ffffff", font=("ubuntu",30,"bold"))
+        clock.grid(row=2,column=2,pady=60,padx=45)
+        timenow()
 
-godate = date.today()
-current_date = godate.strftime("%d.%m.%y")
-datenow2=Label(text=current_date, font="ubuntu", bg="#242424", fg="#ffffff", justify=CENTER)
-datenow2.place(x=110, y=120)
+        godate = date.today()
+        current_date = godate.strftime("%d.%m.%y")
+        datenow2=Label(text=current_date, font="ubuntu", bg="#242424", fg="#ffffff", justify=CENTER)
+        datenow2.place(x=110, y=120)
+
+elif darkdetect.theme() == "Light": 
+                def timenow():
+                        current_time = strftime("%H : %M : %S")
+                        clock.config(text=current_time)
+                        clock.after(200,timenow)
+
+                clock=Label(root, justify=CENTER, bg="#EBEBEB", fg="#000000", font=("ubuntu",30,"bold"))
+                clock.grid(row=2,column=2,pady=60,padx=45)
+                timenow()
+
+                godate = date.today()
+                current_date = godate.strftime("%d.%m.%y")
+                datenow2=Label(text=current_date, bg="#EBEBEB", fg="#000000",font="ubuntu", justify=CENTER)
+                datenow2.place(x=110, y=120)
+
 
 def godapptk():
     root.attributes("-topmost",True)
