@@ -1,11 +1,15 @@
 from sys import platform
 from os import system
+import getpass
+
+user = getpass.getuser()
+
 
 if platform == "win32":
     system("rd /s /q build")
     system("rd /s /q dist")
     system("del /q *.spec")
-    system("pyinstaller --clean -F -i ..\ICO\clock.ico ..\HZF-CLOCK.pyw ")
+    system(f'pyinstaller --noconfirm --onefile --windowed --icon "..\ICO\clock.ico" --add-data "C:/Users/{user}/AppData/Local/Programs/Python/Python311/Lib/site-packages/customtkinter;customtkinter/" "..\HZF-CLOCK.pyw"')
     system("del /q *.spec")
     system("rd /s /q build")
     system("rd /s /q %USERPROFILE%\AppData\Local\pyinstaller")
