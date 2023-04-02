@@ -21,7 +21,7 @@ root = customtkinter.CTk() # Создает окно
 root.geometry("292x250") # Размеры окна
 root.title("HZF Clock") # Название окна
 root.resizable(width=False, height=False) # Запрет на модификацию окна по высоте и ширине
-root.iconbitmap("Source-new-windows-and-macos/ICO/clock.ico") # Иконка приложения
+root.iconbitmap("ICO/clock.ico") # Иконка приложения
 
 # Dark and Light
 if darkdetect.theme() == "Dark":
@@ -96,7 +96,7 @@ def cber():
         windowsadd.geometry("300x100")
         windowsadd.title("Сбер Донат")
         windowsadd.resizable(width=False, height=False)
-        windowsadd.iconbitmap("Source-new-windows-and-macos/ICO/clock.ico")
+        windowsadd.iconbitmap("ICO/clock.ico")
         label = customtkinter.CTkLabel(master=windowsadd, font=("ubuntu",20,"bold"), text="2202 2050 7215 4401")
         label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
         windowsadd.mainloop()
@@ -107,7 +107,7 @@ def vtb():
         windowsadd.geometry("300x100")
         windowsadd.title("ВТБ Донат")
         windowsadd.resizable(width=False, height=False)
-        windowsadd.iconbitmap("Source-new-windows-and-macos/ICO/clock.ico")
+        windowsadd.iconbitmap("ICO/clock.ico")
         label = customtkinter.CTkLabel(master=windowsadd, font=("ubuntu",20,"bold"), text="2200 2404 1001 8580")
         label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
         windowsadd.mainloop()
@@ -127,7 +127,7 @@ def infogui():
         window.geometry("200x200")
         window.title("")
         window.resizable(width=False, height=False)
-        window.iconbitmap("Source-new-windows-and-macos/ICO/clock.ico")
+        window.iconbitmap("ICO/clock.ico")
         button = customtkinter.CTkButton(master=window, text="Telegram Channel", command=opentgchannel)
         button.place(x=30, y=25)
         button = customtkinter.CTkButton(master=window, text="YouTube Channel", command=openytchannel)
@@ -144,7 +144,7 @@ def donategui():
         window.geometry("200x160")
         window.title("")
         window.resizable(width=False, height=False)
-        window.iconbitmap("Source-new-windows-and-macos/ICO/clock.ico")
+        window.iconbitmap("ICO/clock.ico")
         button = customtkinter.CTkButton(master=window, text="Qiwi Донат", command=qiwi)
         button.place(x=30, y=25)
         button = customtkinter.CTkButton(master=window, text="Сбер Донат", command=cber)
@@ -158,7 +158,7 @@ def spravka():
         window.geometry("200x120")
         window.title("")
         window.resizable(width=False, height=False)
-        window.iconbitmap("Source-new-windows-and-macos/ICO/clock.ico")
+        window.iconbitmap("ICO/clock.ico")
         button = customtkinter.CTkButton(master=window, text="Написать разработчику", command=devtgopen)
         button.place(x=20, y=25)
         button = customtkinter.CTkButton(master=window, width=159, text="О программе", command=omyprog)
